@@ -1,0 +1,66 @@
+### testwebseite
+GET http://localhost:8000/
+### Alle Items abrufen
+GET http://localhost:8000/fruits
+### Einzelnes Item abrufen
+GET http://localhost:8000/fruits?id=2
+###
+GET http://localhost:8000/fruits/3
+### Neues Item erstellen
+
+POST http://localhost:8000/fruits
+Content-Type: application/json
+
+{
+  "name": "Kiwi",
+  "description": "tasteful ugly",
+  "count": 40,
+  "store": "WALMARKT-München"
+}
+
+###
+POST http://localhost:8000/fruits
+Content-Type: application/json
+
+{
+  "name": "Banana",
+  "description": "tropic paradise",
+  "count": 30,
+  "store": "WALMARKT-München"
+}
+### Item im Inventory ersetzen
+PUT http://localhost:8000/fruits?id=1
+Content-Type: application/json
+{
+    "name": "Apple",
+    "description": "newtons favorite",
+    "count": 20,
+    "store": "WALMARKT-Düsseldorf"
+}
+
+### Item aktualisieren (PATCH)
+PATCH http://localhost:8000/fruits?id=1 
+Content-Type: application/json
+
+{
+  "description": "Boring, but sweet"
+}
+
+###
+PATCH http://localhost:8000/fruits/2
+Content-Type: application/json
+
+{
+  "description": "Exotic fruit, sweet"
+}
+
+###
+PATCH http://localhost:8000/fruits/2
+Content-Type: application/json
+
+{
+  "name": "Kiwi"
+}
+
+### Item löschen
+DELETE http://localhost:8000/fruits?id=2

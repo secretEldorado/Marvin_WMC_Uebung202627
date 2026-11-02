@@ -1,0 +1,5 @@
+walmarkt.db
+node_modules
+deno.lock
+drizzle/meta/
+.vscode

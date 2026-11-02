@@ -1,0 +1,18 @@
+{
+  "imports": {
+    "@libsql/client": "npm:@libsql/client@^0.18.0",
+    "drizzle-kit": "npm:drizzle-kit@^0.31.11",
+    "drizzle-orm": "npm:drizzle-orm@^0.45.4",
+    "hono": "jsr:@hono/hono@^4.13.13"
+  },
+  "tasks": {
+    "start": "deno run --allow-net main.ts",
+    "db:generate": "deno run -A --node-modules-dir npm:drizzle-kit generate",
+    "db:migrate": "deno run -A --node-modules-dir npm:drizzle-kit migrate",
+    "db:push": "deno run -A --node-modules-dir npm:drizzle-kit push"
+  },
+  "compilerOptions": {
+    "jsx": "precompile",
+    "jsxImportSource": "hono/jsx"
+  }
+}
